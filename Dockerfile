@@ -6,14 +6,14 @@
 ###################################################################################################
 FROM ubuntu
 MAINTAINER hemant.pati@gmail.com
-RUN apt-get -y update && apt-get -y upgrade && apt-get install -y wget
+RUN apt-get -y update && apt-get -y upgrade && apt-get install -y wget  apt-get install -y curl
 RUN mkdir /opt/tomcat/
 WORKDIR /opt/tomcat
-RUN wget https://mirrors.estointernet.in/apache/tomcat/tomcat-9/v9.0.33/bin/apache-tomcat-9.0.33.tar.gz
+RUN curl -O https://mirrors.estointernet.in/apache/tomcat/tomcat-9/v9.0.33/bin/apache-tomcat-9.0.33.tar.gz
 RUN tar xvfz apache*.tar.gz
 RUN mv apache-tomcat-9.0.33/* /opt/tomcat/.
 WORKDIR /opt/tomcat/webapps
-#RUN curl -O -L https://github.com/AKSarav/SampleWebApp/raw/master/dist/SampleWebApp.war
+RUN curl -O -L https://github.com/AKSarav/SampleWebApp/raw/master/dist/SampleWebApp.war
 
 EXPOSE 8080
 
