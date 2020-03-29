@@ -13,7 +13,9 @@ RUN curl -O https://mirrors.estointernet.in/apache/tomcat/tomcat-9/v9.0.33/bin/a
 RUN tar xvfz apache*.tar.gz
 RUN mv apache-tomcat-9.0.33/* /opt/tomcat/.
 WORKDIR /opt/tomcat/webapps
-RUN curl -O -L https://github.com/AKSarav/SampleWebApp/raw/master/dist/SampleWebApp.war
+#RUN curl -O -L https://github.com/AKSarav/SampleWebApp/raw/master/dist/SampleWebApp.war
+
+RUN curl -O -L https://github.com/Hemantakumarpati/tomcat-test/sample.war
 
 EXPOSE 8080
 
