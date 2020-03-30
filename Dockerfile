@@ -15,6 +15,7 @@ RUN tar xvfz apache*.tar.gz
 RUN apt-get install default-jdk -y
 RUN java -version
 WORKDIR /opt/tomcat/apache-tomcat-9.0.33
+RUN cp sample.war /opt/tomcat/apache-tomcat-9.0.33/webapps
 
 #RUN curl -O -L https://github.com/Hemantakumarpati/tomcat-test/sample.war
 
